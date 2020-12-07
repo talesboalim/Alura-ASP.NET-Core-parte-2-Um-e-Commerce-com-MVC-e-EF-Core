@@ -65,7 +65,7 @@ namespace CasaDoCodigo.Models
 
     [DataContract]
     public class ItemPedido : BaseModel
-    {   
+    {
         [Required]
         [DataMember]
         public Pedido Pedido { get; private set; }
@@ -92,6 +92,11 @@ namespace CasaDoCodigo.Models
             Produto = produto;
             Quantidade = quantidade;
             PrecoUnitario = precoUnitario;
+        }
+
+        internal void AtualizaQuantidade(int quantidade)
+        {
+            Quantidade = quantidade;
         }
     }
 
